@@ -7,13 +7,26 @@ public class Main {
     private final static LemonadeStand lemonadeStand = new LemonadeStand();
 
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        // Create two lemonades.
+        Lemonade lemonade1 = new Lemonade(4, 2, 3);
+        Lemonade lemonade2 = new Lemonade(2, 1, 2);
+
+        // Mix them into a new lemonade.
+        Lemonade mixed = Lemonade.mix(lemonade1, lemonade2);
+
+        System.out.println("Mixed Lemonade:");
+        System.out.println("Lemons: " + mixed.getLemons());
+        System.out.println("Sugar: " + mixed.getSugar());
+        System.out.println("Ice: " + mixed.getIce());
+
+        // Open the lemonade stand menu.
+        mainMenu();
     }
 
     public static void mainMenu() {
         while (true) {
             System.out.println("--------------------------------");
-            System.out.println(" Main Menu");
+            System.out.println("Main Menu");
             System.out.println("--------------------------------");
             System.out.println("1. Enter Normal Sale");
             System.out.println("2. Enter Custom Sale");
@@ -40,7 +53,6 @@ public class Main {
             } else {
                 System.out.println("Invalid choice. Please try again.");
             }
-
         }
     }
 
@@ -61,10 +73,10 @@ public class Main {
         System.out.println("Enter the number of lemons to use:");
         int lemons = Integer.parseInt(scanner.nextLine());
 
-        System.out.println("Enter the number of sugar to use:");
+        System.out.println("Enter the amount of sugar to use:");
         int sugar = Integer.parseInt(scanner.nextLine());
 
-        System.out.println("Enter the number of ice to use:");
+        System.out.println("Enter the amount of ice to use:");
         int ice = Integer.parseInt(scanner.nextLine());
 
         System.out.println("Enter the number of lemonades to sell:");
@@ -93,10 +105,10 @@ public class Main {
         System.out.println("Enter the number of lemons to buy:");
         int lemons = Integer.parseInt(scanner.nextLine());
 
-        System.out.println("Enter the number of sugar to buy:");
+        System.out.println("Enter the amount of sugar to buy:");
         int sugar = Integer.parseInt(scanner.nextLine());
 
-        System.out.println("Enter the number of ice to buy:");
+        System.out.println("Enter the amount of ice to buy:");
         int ice = Integer.parseInt(scanner.nextLine());
 
         lemonadeStand.buySupplies(lemons, sugar, ice);
